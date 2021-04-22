@@ -53,6 +53,14 @@ const genStyleRules = () => {
 
     if (loader) {
       loaders.push({ loader, options: loaderOptions })
+      if (loader === 'sass-loader') {
+        loaders.push({
+          loader: 'sass-resources-loader',
+          options: {
+            resources: paths.resolve('src/assets/styles/scss/_include-media.scss'),
+          },
+        })
+      }
     }
 
     return { test, use: loaders }

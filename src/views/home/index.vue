@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <p class="test">test test test</p>
     <img alt="Vue logo" src="./images/logo.png" />
     <HelloWorld msg="Welcome to Your Vue3 Boilerplate" />
   </div>
@@ -15,3 +16,10 @@ export default {
   },
 }
 </script>
+<style lang="scss" scoped>
+.test {
+  @include media('<phone') {
+    color: red;
+  }
+}
+</style>
